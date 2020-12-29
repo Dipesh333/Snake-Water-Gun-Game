@@ -1,0 +1,42 @@
+import random
+list=["snake","water","gun"]
+i=1
+youwin=0
+compwin=0
+draw=0
+while i<=10:
+    yourchoice=input("Enter your Choice").lower()
+    compchoice=random.choice(list)
+    if yourchoice=="snake" and compchoice=="water":
+        youwin+=1
+        print("You won")
+    elif yourchoice=="snake" and compchoice=="gun":
+        compwin+=1
+        print("Computer won")
+    elif yourchoice=="water" and compchoice=="gun":
+        youwin+=1
+        print("You won")
+    elif yourchoice == "water" and compchoice == "snake":
+        compwin += 1
+        print("Computer won")
+    elif yourchoice=="gun" and compchoice=="snake":
+        youwin+=1
+        print("You won")
+    elif yourchoice=="gun" and compchoice=="water":
+        compwin+=1
+        print("Computer won")
+    elif yourchoice=="snake" and compchoice=="snake":
+        draw+=1
+        print("draw")
+    elif yourchoice == "water" and compchoice == "water":
+        draw+=1
+        print("draw")
+    elif yourchoice == "gun" and compchoice == "gun":
+        draw+=1
+        print("draw")
+    i+=1
+print("You win",youwin,"times out of 10 times")
+print("Computer win",compwin,"times out of 10 times")
+print("Draw",draw,"times out of 10 times")
+
+
